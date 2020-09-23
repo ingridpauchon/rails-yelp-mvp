@@ -1,0 +1,11 @@
+<div class="container" class="alert alert-secondary" role="alert">
+<p><%= @restaurant.name%>, category: <%= @restaurant.category %> </p>
+<p>address: <%= @restaurant.address%>, phone numer: <%= @restaurant.phone_number%> </p>
+
+<% @reviews.each do |review| %>
+<p>Review: <%= review.content %> <%= review.rating %></p>
+<% end %>
+
+<%= link_to 'back to all', restaurants_path %>
+<%= link_to 'Create new review', new_restaurant_review_path(@restaurant)%>
+</div>
